@@ -1,15 +1,19 @@
-﻿using DomainModel;
+﻿using DataAccess;
+using DataAccess.Repositories.RepositoryBase;
+using DomainModel;
 
 namespace WinApp.ViewModels.UserVM
 {
     public class UserViewModel : BaseViewModel<User>
     {
-        public UserViewModel()
+        public UserViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
             BuilCommands();
 
             ViewCaption = "MyUser Window";
         }
+
+        protected override IRepository<User> Repository => throw new System.NotImplementedException();
 
         public override void Initialize()
         {
@@ -18,7 +22,7 @@ namespace WinApp.ViewModels.UserVM
 
         public override void Load(int id)
         {
-            Item = new User();
+            Item = new User() { ID = id, Name = "User" };
         }
     }
 }

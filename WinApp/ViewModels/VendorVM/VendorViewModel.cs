@@ -1,15 +1,19 @@
-﻿using DomainModel;
+﻿using DataAccess;
+using DataAccess.Repositories.RepositoryBase;
+using DomainModel;
 
 namespace WinApp.ViewModels.VendorVM
 {
     public class VendorViewModel : BaseViewModel<Vendor>
     {
-        public VendorViewModel()
+        public VendorViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
             BuilCommands();
 
             ViewCaption = "Customer Window";
         }
+
+        protected override IRepository<Vendor> Repository { get => throw new System.NotImplementedException(); }
 
         public override void Initialize()
         {
@@ -18,7 +22,7 @@ namespace WinApp.ViewModels.VendorVM
 
         public override void Load(int id)
         {
-            Item = new Vendor() { Name = "Vendor 007"};
+            Item = new Vendor() { ID = id, Name = "Vendor 007"};
         }
     }
 }

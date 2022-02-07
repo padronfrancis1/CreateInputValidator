@@ -119,5 +119,6 @@ namespace DomainModel
         }
 
         public bool IsValid => GetAllErrors().Count() == 0;
+        public bool IsNew =>ID == 0;
     }
 }

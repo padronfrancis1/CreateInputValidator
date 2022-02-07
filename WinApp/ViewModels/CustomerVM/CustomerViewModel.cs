@@ -1,15 +1,19 @@
-﻿using DomainModel;
+﻿using DataAccess;
+using DataAccess.Repositories.RepositoryBase;
+using DomainModel;
 
 namespace WinApp.ViewModels.CustomerVM
 {
     public class CustomerViewModel : BaseViewModel<Customer>
     {
-        public CustomerViewModel()
+        public CustomerViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
             BuilCommands();
 
             ViewCaption = "Customer Window";
         }
+
+        protected override IRepository<Customer> Repository { get => _dataGateway.CustomerRepository; }
 
         public override void Initialize()
         {
@@ -21,7 +25,7 @@ namespace WinApp.ViewModels.CustomerVM
             Item = new Customer()
             {
                 ID = id,
-                Name = "Francis",
+                Name = "Customer",
             };
         }
     }

@@ -1,4 +1,5 @@
-﻿using DomainModel;
+﻿using DataAccess;
+using DomainModel;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -35,6 +36,8 @@ namespace WinApp
             MapViewModelToView<IBaseViewModel<Customer>, CustomerWindow>();
             MapViewModelToView<IBaseViewModel<Vendor>, VendorWindow>();
             MapViewModelToView<IBaseViewModel<User>, UserWindow>();
+
+            this.RegisterType<IDataGateway, DataGateway>();
 
             this.RegisterType<CustomerViewModel>();
             this.RegisterType<CustomerWindow>();
