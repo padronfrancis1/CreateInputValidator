@@ -25,7 +25,7 @@ namespace ViewModelTest
         internal virtual void Setup()
         {
             _container = _startContainer.CreateChildContainer();
-            WinApp.App.test = "test2";
+            
 
             //App.ConfigureContainer = (container) =>
             //{

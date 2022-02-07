@@ -28,6 +28,7 @@ namespace ViewModelTest
 
         internal override void Setup()
         {
+            WinApp.App.test = "test2";
             base.Setup();
         }
 
