@@ -18,6 +18,8 @@ namespace WinApp
 
         public static WindowController WindowControllerInstance;
 
+        public static string test = "stest";
+
         static App()
         {
             MyUnityContainer007 = new UnityContainer007();

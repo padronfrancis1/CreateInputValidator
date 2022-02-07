@@ -14,28 +14,6 @@ using Xunit;
 namespace ViewModelTest.CustomerVMTest
 {
 
-
-    public abstract class ViewModelTestBase<T> : MyTestBase where T : CustomerViewModel
-    {
-        protected T _vm;
-
-        protected void ResolveVM()
-        {
-            _vm = _container.Resolve<T>();
-        }
-
-        internal override void Setup()
-        {
-            base.Setup();
-        }
-        internal virtual void Setup(Action a)
-        {
-            Setup();
-            ResolveVM();
-        }
-
-    }
-
     public class CustomerVMTest : ViewModelTestBase<CustomerViewModel>
     {
         public CustomerVMTest()

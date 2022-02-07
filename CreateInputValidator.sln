@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinApp", "WinApp\WinApp.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModelTest", "DomainModelTest\DomainModelTest.csproj", "{27B18D14-C2E1-4496-8190-2F94D8663BC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModelTest", "ViewModelTest\ViewModelTest.csproj", "{E08BA2D8-CC8F-4C6B-8EAF-5F95C7BEAE5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinApp.Test", "ViewModelTest\WinApp.Test.csproj", "{E08BA2D8-CC8F-4C6B-8EAF-5F95C7BEAE5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Projects", "Test Projects", "{FFD41C23-6FD8-46DF-BBE1-9A78FD16D0D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{27B18D14-C2E1-4496-8190-2F94D8663BC5} = {FFD41C23-6FD8-46DF-BBE1-9A78FD16D0D9}
+		{E08BA2D8-CC8F-4C6B-8EAF-5F95C7BEAE5A} = {FFD41C23-6FD8-46DF-BBE1-9A78FD16D0D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06625574-EC4B-4169-A905-8B178327B732}
