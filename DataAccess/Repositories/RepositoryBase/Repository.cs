@@ -22,6 +22,7 @@ namespace DataAccess.Repositories.RepositoryBase
 
         public abstract DbSet<T> MinimalQuery { get; }
 
+        // Interface
         public void Add(T item)
         {
             MinimalQuery.Add(item);

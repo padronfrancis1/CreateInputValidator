@@ -13,7 +13,7 @@ namespace WinApp.ViewModels.UserVM
             ViewCaption = "MyUser Window";
         }
 
-        protected override IRepository<User> Repository => throw new System.NotImplementedException();
+        protected override IRepository<User> Repository { get => _dataGateway.UserRepository; }
 
         public override void Initialize()
         {

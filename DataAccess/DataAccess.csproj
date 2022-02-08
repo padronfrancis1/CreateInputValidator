@@ -77,12 +77,20 @@
     <Compile Include="Migrations\202202072124027_AddCustomerTabel.designer.cs">
       <DependentUpon>202202072124027_AddCustomerTabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202081554180_Users.cs" />
+    <Compile Include="Migrations\202202081554180_Users.designer.cs">
+      <DependentUpon>202202081554180_Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CustomerRepository\ICustomerRepository.cs" />
     <Compile Include="Repositories\CustomerRepository\CustomerRepository.cs" />
     <Compile Include="Repositories\RepositoryBase\IRepository.cs" />
     <Compile Include="Repositories\RepositoryBase\Repository.cs" />
+    <Compile Include="Repositories\UserRepository\IUserRepository.cs" />
+    <Compile Include="Repositories\UserRepository\UserRepository.cs" />
+    <Compile Include="Repositories\VendorRepository\IVendorRepository.cs" />
+    <Compile Include="Repositories\VendorRepository\VendorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -97,6 +105,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202072124027_AddCustomerTabel.resx">
       <DependentUpon>202202072124027_AddCustomerTabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202081554180_Users.resx">
+      <DependentUpon>202202081554180_Users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

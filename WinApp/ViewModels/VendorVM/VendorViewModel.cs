@@ -13,7 +13,7 @@ namespace WinApp.ViewModels.VendorVM
             ViewCaption = "Customer Window";
         }
 
-        protected override IRepository<Vendor> Repository { get => throw new System.NotImplementedException(); }
+        protected override IRepository<Vendor> Repository { get => _dataGateway.VendorRepository; }
 
         public override void Initialize()
         {

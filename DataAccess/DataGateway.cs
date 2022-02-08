@@ -1,4 +1,6 @@
 ﻿using DataAccess.Repositories.CustomerRepository;
+using DataAccess.Repositories.UserRepository;
+using DataAccess.Repositories.VendorRepository;
 
 namespace DataAccess
 {
@@ -38,21 +40,40 @@ namespace DataAccess
             }
         }
 
-        //private IQuoteRepository _quoteRepository;
-        //public IQuoteRepository QuoteRepository
-        //{
-        //    get
-        //    {
-        //        if (_quoteRepository == null)
-        //        {
-        //            _quoteRepository = new QuoteRepository(_dataContext);
-        //        }
-        //        return _quoteRepository;
-        //    }
-        //    private set
-        //    {
-        //        _quoteRepository = value;
-        //    }
-        //}
+        private IUserRepository _userRepository;
+        public IUserRepository UserRepository
+        {
+            get
+            {
+                if (_userRepository == null)
+                {
+                    _userRepository = new UserRepository(_dataContext);
+                }
+                return _userRepository;
+            }
+            private set
+            {
+                _userRepository = value;
+            }
+        }
+
+        private IVendorRepository _vendorRepository;
+        public IVendorRepository VendorRepository
+        {
+            get
+            {
+                if (_vendorRepository == null)
+                {
+                    _vendorRepository = new VendorRepository(_dataContext);
+                }
+                return _vendorRepository;
+            }
+            private set
+            {
+                _vendorRepository = value;
+            }
+        }
     }
+
 }
+

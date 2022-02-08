@@ -1,4 +1,6 @@
 ﻿using DataAccess.Repositories.CustomerRepository;
+using DataAccess.Repositories.UserRepository;
+using DataAccess.Repositories.VendorRepository;
 using System;
 
 namespace DataAccess
@@ -7,6 +9,7 @@ namespace DataAccess
     {
         void SaveChanges();
         ICustomerRepository CustomerRepository { get; }
-        //IQuoteRepository QuoteRepository { get; }
+        IUserRepository UserRepository { get; }
+        IVendorRepository VendorRepository { get; }
     }
 }
