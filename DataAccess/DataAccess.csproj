@@ -77,9 +77,9 @@
     <Compile Include="Migrations\202202072124027_AddCustomerTabel.designer.cs">
       <DependentUpon>202202072124027_AddCustomerTabel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202081554180_Users.cs" />
-    <Compile Include="Migrations\202202081554180_Users.designer.cs">
-      <DependentUpon>202202081554180_Users.cs</DependentUpon>
+    <Compile Include="Migrations\202202081554180_UsersVendors.cs" />
+    <Compile Include="Migrations\202202081554180_UsersVendors.designer.cs">
+      <DependentUpon>202202081554180_UsersVendors.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,8 +106,8 @@
     <EmbeddedResource Include="Migrations\202202072124027_AddCustomerTabel.resx">
       <DependentUpon>202202072124027_AddCustomerTabel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202081554180_Users.resx">
-      <DependentUpon>202202081554180_Users.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202081554180_UsersVendors.resx">
+      <DependentUpon>202202081554180_UsersVendors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

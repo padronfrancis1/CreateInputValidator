@@ -38,15 +38,6 @@
                 Command="{Binding AddVendorCommand}"
                 Content="New Vendor" />
 
-        <Button Name="btnNewUser"
-                Grid.Row="0"
-                Grid.Column="2"
-                Width="100"
-                Height="25"
-                Margin="5"
-                Command="{Binding AddUserCommand}"
-                Content="New User" />
-        
         <Button Name="btnOpenCustomer"
                 Grid.Row="1"
                 Grid.Column="0"
@@ -65,13 +56,22 @@
                 Command="{Binding OpenVendorCommand}"
                 Content="Open Vendor" />
 
+        <Button Name="btnNewUser"
+                Grid.Row="0"
+                Grid.Column="2"
+                Width="100"
+                Height="25"
+                Margin="5"
+                Command="{Binding AddUserCommand}"
+                Content="New User" />
+        
         <Button Name="btnOpenUser"
                 Grid.Row="1"
                 Grid.Column="2"
                 Width="100"
                 Height="25"
                 Margin="5"
-                Command="{Binding OpenUserCommand}"
+                Command="{Binding OpenListViewUserCommand}"
                 Content="Open User" />
 
     </Grid>

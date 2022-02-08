@@ -29,15 +29,26 @@ namespace WinApp
 
         public UnityContainer007() : base()
         {
-            MapModelToViewModel<Customer, CustomerViewModel>();
-            MapModelToViewModel<Vendor, VendorViewModel>();
-            MapModelToViewModel<User, UserViewModel>();
+            /// Map Create Edit Class to View Models
+            MapModelToViewModel<ICreateEditBaseViewModel<Customer>, CustomerViewModel>();
+            MapModelToViewModel<ICreateEditBaseViewModel<Vendor>, VendorViewModel>();
+            MapModelToViewModel<ICreateEditBaseViewModel<User>, UserViewModel>();
 
-            MapViewModelToView<IBaseViewModel<Customer>, CustomerWindow>();
-            MapViewModelToView<IBaseViewModel<Vendor>, VendorWindow>();
-            MapViewModelToView<IBaseViewModel<User>, UserWindow>();
+            /// Map List Class to View Models
+            MapModelToViewModel<IListBaseViewModel<User>, UserListViewModel>();
 
+            /// Map Create Edit Class to Window
+            MapViewModelToView<ICreateEditBaseViewModel<Customer>, CustomerWindow>();
+            MapViewModelToView<ICreateEditBaseViewModel<Vendor>, VendorWindow>();
+            MapViewModelToView<ICreateEditBaseViewModel<User>, UserWindow>();
+
+            /// Map List Class to List View
+            MapViewModelToView<IListBaseViewModel<User>, UserListViewModelWindow>();
+
+            /// Register View Model and Windows
             this.RegisterType<IDataGateway, DataGateway>();
+
+            this.RegisterType<UserListViewModelWindow>();
 
             this.RegisterType<CustomerViewModel>();
             this.RegisterType<CustomerWindow>();

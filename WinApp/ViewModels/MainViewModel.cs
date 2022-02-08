@@ -22,6 +22,8 @@ namespace WinApp.ViewModels
 
             AddUserCommand = BuildAddRelayCommand<User>();
             OpenUserCommand = BuildAddRelayCommand<User>();
+            OpenListViewUserCommand = BuildOpenListViewRelayCommand<User>();
+
 
         }
 
@@ -40,6 +42,14 @@ namespace WinApp.ViewModels
             });
         }
 
+        private RelayCommand BuildOpenListViewRelayCommand<T>() where T : DomainObject
+        {
+            return new RelayCommand(x =>
+            {
+                App.EventAggregator.GetEvent<OpenListViewEvent<T>>().Publish(new OpenListViewEventEventArgs<T>() { });
+            });
+        }
+
         public RelayCommand AddCustomerCommand { get; set; }
         public RelayCommand OpenCustomerCommand { get; set; }
 
@@ -48,5 +58,6 @@ namespace WinApp.ViewModels
 
         public RelayCommand AddUserCommand { get; set; }
         public RelayCommand OpenUserCommand { get; set; }
+        public RelayCommand OpenListViewUserCommand { get; set; }
     }
 }

@@ -37,7 +37,7 @@ namespace WinApp.Framework.ViewModels
 
     }
 
-    public abstract class MyViewModelTestBase<T> : ViewModelTestBase<BaseViewModel<T>> where T : DomainModel.DomainObject
+    public abstract class MyViewModelTestBase<T> : ViewModelTestBase<CreateEditBaseViewModel<T>> where T : DomainModel.DomainObject
     {
         
         public MyViewModelTestBase()

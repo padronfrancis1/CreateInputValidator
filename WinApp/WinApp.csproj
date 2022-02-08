@@ -101,14 +101,20 @@
     <Compile Include="Events\WindowController.cs" />
     <Compile Include="PropertyChanged\NotifyAttribute.cs" />
     <Compile Include="UnityContainer007.cs" />
+    <Compile Include="ViewModels\ListBaseViewModel .cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CreateEditBaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\UserVM\UserListViewModel.cs" />
     <Compile Include="ViewModels\UserVM\UserViewModel.cs" />
     <Compile Include="ViewModels\ValidationVM\ValidationViewModel.cs" />
     <Compile Include="ViewModels\VendorVM\VendorViewModel.cs" />
     <Compile Include="ViewModels\CustomerVM\CustomerViewModel.cs" />
     <Compile Include="Views\CustomerUI\CustomerWindow.xaml.cs">
       <DependentUpon>CustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserUI\UserListViewModelWindow.xaml.cs">
+      <DependentUpon>UserListViewModelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserUI\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
@@ -132,6 +138,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\CustomerUI\CustomerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserUI\UserListViewModelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

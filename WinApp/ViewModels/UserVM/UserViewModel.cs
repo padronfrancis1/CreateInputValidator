@@ -4,12 +4,10 @@ using DomainModel;
 
 namespace WinApp.ViewModels.UserVM
 {
-    public class UserViewModel : BaseViewModel<User>
+    public class UserViewModel : CreateEditBaseViewModel<User>
     {
         public UserViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
-            BuilCommands();
-
             ViewCaption = "MyUser Window";
         }
 
@@ -22,7 +20,7 @@ namespace WinApp.ViewModels.UserVM
 
         public override void Load(int id)
         {
-            Item = new User() { ID = id, Name = "User" };
+            Item = Repository.Get(id);
         }
     }
 }

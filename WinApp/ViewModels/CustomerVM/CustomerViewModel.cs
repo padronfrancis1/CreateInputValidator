@@ -4,12 +4,10 @@ using DomainModel;
 
 namespace WinApp.ViewModels.CustomerVM
 {
-    public class CustomerViewModel : BaseViewModel<Customer>
+    public class CustomerViewModel : CreateEditBaseViewModel<Customer>
     {
         public CustomerViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
-            BuilCommands();
-
             ViewCaption = "Customer Window";
         }
 

@@ -28,9 +28,9 @@ namespace WinApp.Framework.ViewModels
             App.ConfigureContainer = (container) =>
             {
                 container.RegisterInstance<Prism.Events.IEventAggregator>(_eventAggregator);
-                container.RegisterType<BaseViewModel<Customer>, CustomerViewModel>();
-                container.RegisterType<BaseViewModel<Vendor>, VendorViewModel>();
-                container.RegisterType<BaseViewModel<User>, UserViewModel>();
+                container.RegisterType<CreateEditBaseViewModel<Customer>, CustomerViewModel>();
+                container.RegisterType<CreateEditBaseViewModel<Vendor>, VendorViewModel>();
+                container.RegisterType<CreateEditBaseViewModel<User>, UserViewModel>();
                 return Task.CompletedTask;
             };
             _eventAggregator = new EventAggregator007();

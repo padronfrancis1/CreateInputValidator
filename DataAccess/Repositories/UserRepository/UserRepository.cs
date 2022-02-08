@@ -21,8 +21,7 @@ namespace DataAccess.Repositories.UserRepository
             }
 
         }
-
-        public override IQueryable<User> SearchQuery => throw new NotImplementedException();
+        public override IQueryable<User> SearchQuery => FullQuery;
 
         public override DbSet<User> MinimalQuery => Context.Set<User>();
     }

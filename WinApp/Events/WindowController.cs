@@ -25,6 +25,7 @@ namespace WinApp
             {
                 _eventAggregator.GetEvent<AddItemRequestedEvent<T>>().Subscribe(OnAddItemRequested, true);
                 _eventAggregator.GetEvent<OpenItemRequestedEvent<T>>().Subscribe(OpenItemRequested, true);
+                _eventAggregator.GetEvent<OpenListViewEvent<T>>().Subscribe(OnOpenListViewEvent, true);
             }
 
             private void OnValidationErrorRequested(ValidationEventArgs args)
@@ -51,8 +52,8 @@ namespace WinApp
             private void OnAddItemRequested<T>(AddItemRequestedEventArgs<T> args) where T : DomainObject
             {
                 // Whenever there is a resolve - it goes to the class or a new instane of class if there is any
-                var vm = UnityContainer007.ResolveViewModel<T>(App.MyUnityContainer007);
-                var window = UnityContainer007.ResolveWindow<IBaseViewModel<T>>(App.MyUnityContainer007);
+                var vm = UnityContainer007.ResolveViewModel<ICreateEditBaseViewModel<T>>(App.MyUnityContainer007) as ICreateEditBaseViewModel<T>;
+                var window = UnityContainer007.ResolveWindow<ICreateEditBaseViewModel<T>>(App.MyUnityContainer007);
                 vm.Initialize();
                 vm.Window = window;
                 window.DataContext = vm;
@@ -61,10 +62,20 @@ namespace WinApp
 
             private void OpenItemRequested<T>(OpenItemRequestedEventArgs<T> args) where T : DomainObject
             {
-                var vm = UnityContainer007.ResolveViewModel<T>(App.MyUnityContainer007);
-                var window = UnityContainer007.ResolveWindow<IBaseViewModel<T>>(App.MyUnityContainer007);
+                var vm = UnityContainer007.ResolveViewModel<ICreateEditBaseViewModel<T>>(App.MyUnityContainer007) as ICreateEditBaseViewModel<T>;
+                var window = UnityContainer007.ResolveWindow<ICreateEditBaseViewModel<T>>(App.MyUnityContainer007);
                 vm.Window = window;
                 vm.Load(args.ID);
+                window.DataContext = vm;
+                window.ShowDialog();
+            }
+
+            public void OnOpenListViewEvent<T>(OpenListViewEventEventArgs<T> args) where T : DomainObject
+            {
+                IListBaseViewModel<T> vm = UnityContainer007.ResolveViewModel<IListBaseViewModel<T>>(App.MyUnityContainer007) as IListBaseViewModel<T>;
+                var window = UnityContainer007.ResolveWindow<IListBaseViewModel<T>>(App.MyUnityContainer007);
+                vm.Window = window;
+                vm.Load(null);
                 window.DataContext = vm;
                 window.ShowDialog();
             }

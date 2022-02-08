@@ -10,6 +10,9 @@ namespace WinApp.Events
     {
         public int ID { get; set; }
     }
+    public class OpenListViewEventEventArgs<T>
+    {
+    }
 
     public class ValidationEventArgs
     {
