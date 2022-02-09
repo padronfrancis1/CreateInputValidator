@@ -10,7 +10,6 @@ namespace WinApp.ViewModels
 {
     public interface ICreateEditBaseViewModel : IBaseViewModel
     {
-        // USED IN OBJECT AND VIEW MODEL MAPPING
         void Initialize();
         void Load(int id);
 
@@ -31,8 +30,6 @@ namespace WinApp.ViewModels
         public RelayCommand SaveCommand { get; set; }
         public RelayCommand CancelCommand { get; set; }
         public RelayCommand OpenCommand { get; set; }
-
-
 
         public override void BuilCommands()
         {
@@ -67,7 +64,6 @@ namespace WinApp.ViewModels
             {
             });
         }
-
         public abstract void Initialize();
         public abstract void Load(int id);
     }

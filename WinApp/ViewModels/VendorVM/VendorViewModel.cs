@@ -8,7 +8,7 @@ namespace WinApp.ViewModels.VendorVM
     {
         public VendorViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
-            ViewCaption = "Customer Window";
+            //ViewCaption = "Customer Window";
         }
 
         protected override IRepository<Vendor> Repository { get => _dataGateway.VendorRepository; }

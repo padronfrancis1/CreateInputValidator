@@ -14,7 +14,7 @@ namespace WinApp.ViewModels.UserVM
 
         public UserListViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
-            ViewCaption = "User List View Model";
+            //ViewCaption = "User List View Model";
         }
 
         public override void Load(int? id)

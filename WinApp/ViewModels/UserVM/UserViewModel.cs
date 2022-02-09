@@ -8,7 +8,7 @@ namespace WinApp.ViewModels.UserVM
     {
         public UserViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
-            ViewCaption = "MyUser Window";
+            //ViewCaption = "MyUser Window";
         }
 
         protected override IRepository<User> Repository { get => _dataGateway.UserRepository; }

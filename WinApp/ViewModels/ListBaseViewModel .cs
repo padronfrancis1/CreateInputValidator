@@ -9,7 +9,6 @@ namespace WinApp.ViewModels
 {
     public interface IListBaseViewModel : IBaseViewModel
     {
-        // USED IN OBJECT AND VIEW MODEL MAPPING
         void Load(int? id);
         RelayCommand OpenCommand { get; set; }
         List<DataGridColumn> GridColumns { get; set; }
@@ -41,9 +40,7 @@ namespace WinApp.ViewModels
                 }
             });
         }
-
         public abstract void BuildGridColumns();
-
         public abstract void Load(int? id);
     }
 }

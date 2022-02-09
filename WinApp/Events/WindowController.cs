@@ -56,6 +56,7 @@ namespace WinApp
                 var window = UnityContainer007.ResolveWindow<ICreateEditBaseViewModel<T>>(App.MyUnityContainer007);
                 vm.Initialize();
                 vm.Window = window;
+                vm.ViewCaption = $"New {typeof(T).Name} window";
                 window.DataContext = vm;
                 window.ShowDialog();
             }
@@ -65,6 +66,7 @@ namespace WinApp
                 var vm = UnityContainer007.ResolveViewModel<ICreateEditBaseViewModel<T>>(App.MyUnityContainer007) as ICreateEditBaseViewModel<T>;
                 var window = UnityContainer007.ResolveWindow<ICreateEditBaseViewModel<T>>(App.MyUnityContainer007);
                 vm.Window = window;
+                vm.ViewCaption = $"Edit {typeof(T).Name} {args.ID} window";
                 vm.Load(args.ID);
                 window.DataContext = vm;
                 window.ShowDialog();
@@ -75,6 +77,7 @@ namespace WinApp
                 IListBaseViewModel<T> vm = UnityContainer007.ResolveViewModel<IListBaseViewModel<T>>(App.MyUnityContainer007) as IListBaseViewModel<T>;
                 var window = UnityContainer007.ResolveWindow<IListBaseViewModel<T>>(App.MyUnityContainer007);
                 vm.Window = window;
+                vm.ViewCaption = $"{typeof(T).Name} List Window";
                 vm.Load(null);
                 window.DataContext = vm;
                 window.ShowDialog();
