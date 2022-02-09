@@ -101,6 +101,7 @@
     <Compile Include="Events\WindowController.cs" />
     <Compile Include="PropertyChanged\NotifyAttribute.cs" />
     <Compile Include="UnityContainer007.cs" />
+    <Compile Include="ViewModels\CustomerVM\CustomerListViewModel.cs" />
     <Compile Include="ViewModels\ListBaseViewModel .cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CreateEditBaseViewModel.cs" />
@@ -108,10 +109,14 @@
     <Compile Include="ViewModels\UserVM\UserListViewModel.cs" />
     <Compile Include="ViewModels\UserVM\UserViewModel.cs" />
     <Compile Include="ViewModels\ValidationVM\ValidationViewModel.cs" />
+    <Compile Include="ViewModels\VendorVM\VendorListViewModel.cs" />
     <Compile Include="ViewModels\VendorVM\VendorViewModel.cs" />
     <Compile Include="ViewModels\CustomerVM\CustomerViewModel.cs" />
     <Compile Include="Views\CustomerUI\CustomerWindow.xaml.cs">
       <DependentUpon>CustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerUI\CustomerListViewModelWindow.xaml.cs">
+      <DependentUpon>CustomerListViewModelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserUI\UserListViewModelWindow.xaml.cs">
       <DependentUpon>UserListViewModelWindow.xaml</DependentUpon>
@@ -121,6 +126,9 @@
     </Compile>
     <Compile Include="Views\ValidationUI\ValidationWindow.xaml.cs">
       <DependentUpon>ValidationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorUI\VendorListViewModelWindow.xaml.cs">
+      <DependentUpon>VendorListViewModelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\VendorUI\VendorWindow.xaml.cs">
       <DependentUpon>VendorWindow.xaml</DependentUpon>
@@ -141,6 +149,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CustomerUI\CustomerListViewModelWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\UserUI\UserListViewModelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +162,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ValidationUI\ValidationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VendorUI\VendorListViewModelWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

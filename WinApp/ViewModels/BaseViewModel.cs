@@ -25,7 +25,6 @@ namespace WinApp.ViewModels
 
         protected abstract IRepository<T> Repository { get; }
 
-
         public virtual void BuilCommands()
         {
         }

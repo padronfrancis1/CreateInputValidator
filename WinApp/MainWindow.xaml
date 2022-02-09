@@ -44,7 +44,7 @@
                 Width="100"
                 Height="25"
                 Margin="5"
-                Command="{Binding OpenCustomerCommand}"
+                Command="{Binding OpenListViewCustomerCommand}"
                 Content="Open Customer" />
 
         <Button Name="btnOpenVendor"
@@ -53,7 +53,7 @@
                 Width="100"
                 Height="25"
                 Margin="5"
-                Command="{Binding OpenVendorCommand}"
+                Command="{Binding OpenListViewVendorCommand}"
                 Content="Open Vendor" />
 
         <Button Name="btnNewUser"

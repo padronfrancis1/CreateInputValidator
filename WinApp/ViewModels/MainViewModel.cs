@@ -16,9 +16,11 @@ namespace WinApp.ViewModels
             // Button Click will hit here
             AddCustomerCommand = BuildAddRelayCommand<Customer>();
             OpenCustomerCommand = BuildOpenRelayCommand<Customer>();
+            OpenListViewCustomerCommand = BuildOpenListViewRelayCommand<Customer>();
 
             AddVendorCommand = BuildAddRelayCommand<Vendor>();
             OpenVendorCommand = BuildOpenRelayCommand<Vendor>();
+            OpenListViewVendorCommand = BuildOpenListViewRelayCommand<Vendor>();
 
             AddUserCommand = BuildAddRelayCommand<User>();
             OpenUserCommand = BuildAddRelayCommand<User>();
@@ -52,9 +54,11 @@ namespace WinApp.ViewModels
 
         public RelayCommand AddCustomerCommand { get; set; }
         public RelayCommand OpenCustomerCommand { get; set; }
+        public RelayCommand OpenListViewCustomerCommand { get; set; }
 
         public RelayCommand AddVendorCommand { get; set; }
         public RelayCommand OpenVendorCommand { get; set; }
+        public RelayCommand OpenListViewVendorCommand { get; set; }
 
         public RelayCommand AddUserCommand { get; set; }
         public RelayCommand OpenUserCommand { get; set; }

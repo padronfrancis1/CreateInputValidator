@@ -20,7 +20,7 @@ namespace DataAccess.Repositories.VendorRepository
             }
         }
 
-        public override IQueryable<Vendor> SearchQuery => throw new NotImplementedException();
+        public override IQueryable<Vendor> SearchQuery => FullQuery;
 
         public override DbSet<Vendor> MinimalQuery => Context.Set<Vendor>();
     }

@@ -8,7 +8,6 @@ namespace WinApp.ViewModels.VendorVM
     {
         public VendorViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
-            //ViewCaption = "Customer Window";
         }
 
         protected override IRepository<Vendor> Repository { get => _dataGateway.VendorRepository; }
@@ -20,7 +19,7 @@ namespace WinApp.ViewModels.VendorVM
 
         public override void Load(int id)
         {
-            Item = new Vendor() { ID = id, Name = "Vendor 009"};
+            Item = Repository.Get(id);
         }
     }
 }

@@ -36,6 +36,8 @@ namespace WinApp
 
             /// Map List Class to View Models
             MapModelToViewModel<IListBaseViewModel<User>, UserListViewModel>();
+            MapModelToViewModel<IListBaseViewModel<Customer>, CustomerListViewModel>();
+            MapModelToViewModel<IListBaseViewModel<Vendor>, VendorListViewModel>();
 
             /// Map Create Edit Class to Window
             MapViewModelToView<ICreateEditBaseViewModel<Customer>, CustomerWindow>();
@@ -44,11 +46,15 @@ namespace WinApp
 
             /// Map List Class to List View
             MapViewModelToView<IListBaseViewModel<User>, UserListViewModelWindow>();
+            MapViewModelToView<IListBaseViewModel<Customer>, CustomerListViewModelWindow>();
+            MapViewModelToView<IListBaseViewModel<Vendor>, VendorListViewModelWindow>();
 
             /// Register View Model and Windows
             this.RegisterType<IDataGateway, DataGateway>();
 
             this.RegisterType<UserListViewModelWindow>();
+            this.RegisterType<CustomerListViewModelWindow>();
+            this.RegisterType<VendorListViewModelWindow>();
 
             this.RegisterType<CustomerViewModel>();
             this.RegisterType<CustomerWindow>();

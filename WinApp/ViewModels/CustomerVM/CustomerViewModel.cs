@@ -8,9 +8,7 @@ namespace WinApp.ViewModels.CustomerVM
     {
         public CustomerViewModel(IDataGateway dataGateway) : base(dataGateway)
         {
-            //ViewCaption = "Customer Window";
         }
-
         protected override IRepository<Customer> Repository { get => _dataGateway.CustomerRepository; }
 
         public override void Initialize()
@@ -20,11 +18,7 @@ namespace WinApp.ViewModels.CustomerVM
 
         public override void Load(int id)
         {
-            Item = new Customer()
-            {
-                ID = id,
-                Name = "Customer",
-            };
+            Item = Repository.Get(id);
         }
     }
 }
