@@ -1,8 +1,9 @@
-﻿using DomainModel;
+﻿using DataAccess;
+using DomainModel;
 
 namespace WinApp.Framework.ViewModels.VendorVMTest
 {
-    public class VendorVMTest : MyViewModelTestBase<Vendor>
+    public class VendorVMTest
     {
     }
 }

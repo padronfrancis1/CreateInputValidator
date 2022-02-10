@@ -1,8 +1,9 @@
-﻿using DomainModel;
+﻿using DataAccess;
+using DomainModel;
 
 namespace WinApp.Framework.ViewModels.UserVMTest
 {
-    public class UserVMTest : MyViewModelTestBase<User>
+    public class UserVMTest
     {
     }
 }

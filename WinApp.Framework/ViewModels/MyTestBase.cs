@@ -1,4 +1,5 @@
-﻿using DomainModel;
+﻿using DataAccess;
+using DomainModel;
 using System.Threading.Tasks;
 using Unity;
 using WinApp.Events;
@@ -18,13 +19,10 @@ namespace WinApp.Framework.ViewModels
         static MyTestBase()
         {
             _startContainer = new UnityContainer();
-            //_startContainer.AddNewExtension<Unity.Interception.Interception>();
         }
         internal virtual void Setup()
         {
             _container = _startContainer.CreateChildContainer();
-
-
             App.ConfigureContainer = (container) =>
             {
                 container.RegisterInstance<Prism.Events.IEventAggregator>(_eventAggregator);
@@ -36,7 +34,6 @@ namespace WinApp.Framework.ViewModels
             _eventAggregator = new EventAggregator007();
             System.Threading.Thread.CurrentPrincipal = null;
 
-            //// By default give us access to everything so we can test it
             App.ConfigureContainer(_container).Wait();
             App.MyUnityContainer007 = _container;
             App.EventAggregator = _eventAggregator;

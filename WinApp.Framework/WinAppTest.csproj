@@ -58,6 +58,7 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MockDataGateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\UserVMTest\UserVMTest.cs" />
     <Compile Include="ViewModels\VendorVMTest\VendorVMTest.cs" />
@@ -69,6 +70,10 @@
     <ProjectReference Include="..\CreateInputValidator\DomainModel.csproj">
       <Project>{45bbb634-6da8-4391-970d-386df4058476}</Project>
       <Name>DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{8937E749-4A9B-4E31-B94A-40481A413356}</Project>
+      <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\WinApp\WinApp.csproj">
       <Project>{598606BF-6937-439F-B7A1-823C9DCC4FD7}</Project>

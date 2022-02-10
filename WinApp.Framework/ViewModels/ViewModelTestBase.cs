@@ -1,15 +1,20 @@
-﻿using Moq;
-using System;
-using System.Windows;
+﻿using System;
 using Unity;
 using WinApp.Events;
 using WinApp.ViewModels;
 using Xunit;
+using DomainModel;
+using DataAccess;
 
 namespace WinApp.Framework.ViewModels
 {
     public abstract class ViewModelTestBase<T> : MyTestBase where T : class
     {
+        protected IDataGateway _dataGateway { get; set; }
+        public ViewModelTestBase(IDataGateway dataGateway)
+        {
+            _dataGateway = dataGateway;
+        }
         protected T _vm;
         internal virtual void Setup(Action additionalSetup)
         {
@@ -31,16 +36,16 @@ namespace WinApp.Framework.ViewModels
 
         internal override void Setup()
         {
-            WinApp.App.test = "test2";
             base.Setup();
         }
 
     }
 
-    public abstract class MyViewModelTestBase<T> : ViewModelTestBase<CreateEditBaseViewModel<T>> where T : DomainModel.DomainObject
+    public abstract class MyViewModelTestBase<T> : ViewModelTestBase<CreateEditBaseViewModel<T>>
+        where T : DomainObject
     {
-        
-        public MyViewModelTestBase()
+
+        public MyViewModelTestBase(IDataGateway dataGateway) : base(dataGateway)
         {
             base.Setup(() =>
             {
