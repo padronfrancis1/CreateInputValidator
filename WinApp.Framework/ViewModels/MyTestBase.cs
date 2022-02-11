@@ -15,6 +15,7 @@ namespace WinApp.Framework.ViewModels
         protected EventAggregator007 _eventAggregator;
         protected IUnityContainer _container;
         protected static IUnityContainer _startContainer;
+        protected MockDataGateway _dataGateway;
 
         static MyTestBase()
         {
@@ -26,12 +27,15 @@ namespace WinApp.Framework.ViewModels
             App.ConfigureContainer = (container) =>
             {
                 container.RegisterInstance<Prism.Events.IEventAggregator>(_eventAggregator);
+                container.RegisterInstance<IReadOnlyDataGateway>(_dataGateway.Object);
+                container.RegisterInstance<IDataGateway>(_dataGateway.Object);
                 container.RegisterType<CreateEditBaseViewModel<Customer>, CustomerViewModel>();
                 container.RegisterType<CreateEditBaseViewModel<Vendor>, VendorViewModel>();
                 container.RegisterType<CreateEditBaseViewModel<User>, UserViewModel>();
                 return Task.CompletedTask;
             };
             _eventAggregator = new EventAggregator007();
+            _dataGateway = new MockDataGateway();
             System.Threading.Thread.CurrentPrincipal = null;
 
             App.ConfigureContainer(_container).Wait();

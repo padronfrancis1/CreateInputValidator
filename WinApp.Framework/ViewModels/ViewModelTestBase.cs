@@ -5,16 +5,14 @@ using WinApp.ViewModels;
 using Xunit;
 using DomainModel;
 using DataAccess;
+using DataAccess.Repositories.UserRepository;
+using Moq;
+using DataAccess.Repositories.RepositoryBase;
 
 namespace WinApp.Framework.ViewModels
 {
     public abstract class ViewModelTestBase<T> : MyTestBase where T : class
     {
-        protected IDataGateway _dataGateway { get; set; }
-        public ViewModelTestBase(IDataGateway dataGateway)
-        {
-            _dataGateway = dataGateway;
-        }
         protected T _vm;
         internal virtual void Setup(Action additionalSetup)
         {
@@ -44,14 +42,13 @@ namespace WinApp.Framework.ViewModels
     public abstract class MyViewModelTestBase<T> : ViewModelTestBase<CreateEditBaseViewModel<T>>
         where T : DomainObject
     {
-
-        public MyViewModelTestBase(IDataGateway dataGateway) : base(dataGateway)
+        public MyViewModelTestBase()
         {
             base.Setup(() =>
             {
-                Console.WriteLine("Initializing test");
             });
         }
+
         [Fact]
         public void TestInitialize()
         {
@@ -77,6 +74,7 @@ namespace WinApp.Framework.ViewModels
             _vm.Load(1);
             Assert.True(_vm.Item.IsValid);
             _vm.SaveCommand.Execute(null);
+            _dataGateway.Verify(x => x.SaveChanges(), Times.Once);
             Assert.False(eventFired);
         }
 

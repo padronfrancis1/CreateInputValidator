@@ -58,7 +58,9 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IReadOnlyDataGateway.cs" />
     <Compile Include="MockDataGateway.cs" />
+    <Compile Include="MockDataGatewayImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\UserVMTest\UserVMTest.cs" />
     <Compile Include="ViewModels\VendorVMTest\VendorVMTest.cs" />
